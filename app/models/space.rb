@@ -6,7 +6,11 @@ class Space
     # TODO there should be some method to determine different piece state and flips.
 
     def playable?
-        true
+        if self.value == nil
+            true
+        else
+            false
+        end
     end
 
     def value_to_s
