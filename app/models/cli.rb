@@ -2,25 +2,25 @@
 
 class Cli
 
-    attr_accessor :board
+    attr_accessor :game
 
     def initialize
-        self.board = Board.new
+        self.game = Game.new
     end
 
     def menu
         puts "Welcome to Othello"
         render_board
-        until self.board.over?
+        until self.game.over?
             self.turn
         end
     end
 
     def turn
-        puts "#{board.token}'s turn"
+        puts "#{game.token}'s turn"
         row = get_row
         column = get_column
-        unless board.play_if_playable(row, column)
+        unless game.play_if_playable(row, column)
             puts "That space is not playable, try again"
             turn
         end
@@ -56,7 +56,7 @@ class Cli
     def render_board
         puts "     1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |"
         puts "   |-------------------------------|"
-        self.board.spaces.each_with_index do |row, index|
+        game.board.spaces.each_with_index do |row, index|
         print " #{index + 1} | "
             row.each do |space|
                 print space.value_to_s + " | "
