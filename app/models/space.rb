@@ -3,6 +3,8 @@ class Space
 
     attr_accessor :value
 
+    # TODO there should be some method to determine different piece state and flips.
+
     def playable?
         true
     end

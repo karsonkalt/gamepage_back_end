@@ -8,6 +8,7 @@ class Board
         8.times do
             self.spaces << Array.new(8) {Space.new}
         end
+        # TODO this sould not be in the board class, this should be managed by the piece
         self.space(4, 4).value = "X"
         self.space(4, 5).value = "O"
         self.space(5, 4).value = "O"
@@ -18,28 +19,22 @@ class Board
         self.spaces[row - 1][column - 1]
     end
 
-    def render
-        puts "     1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |"
-        puts "   |-------------------------------|"
-        self.spaces.each_with_index do |row, index|
-        print " #{index + 1} | "
-            row.each do |space|
-                print space.value_to_s + " | "
-            end
-            print "\n"
-        end
-        true
-    end
-
     def play(row, column)
-        self.space(row, column).value = "X"
+        self.space(row, column).value = self.token
     end
 
-    def turns
+    def token
+        if self.turn_count.even?
+            "X"
+        else
+            "O"
+        end
+    end
+
+    def turn_count
         counter = 0
-        self.spaces.each do |space|
-            byebug
-            if space.value != nil : counter++ end
+        self.spaces.flatten.each do |space|
+            counter += 1 unless space.value == nil
         end
         counter - 4
     end
