@@ -1,7 +1,4 @@
-class User < ApplicationRecord
-    include Player
+# class User < ApplicationRecord
+#     has_many :scores
 
-    has_many :scores
-
-    
-end
+# end

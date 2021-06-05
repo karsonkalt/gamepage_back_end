@@ -12,19 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2021_06_02_224545) do
 
-  create_table "scores", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "points"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_scores_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "players", force: :cascade do |t|
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "scores", "users"
+  create_table "scores", force: :cascade do |t|
+    t.integer "player_id", null: false
+    t.integer "points"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_scores_on_player_id"
+  end
+
+  add_foreign_key "scores", "players"
 end
