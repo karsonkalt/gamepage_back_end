@@ -14,8 +14,10 @@ class BoardController < ApplicationController
     end
 
     def play
+        cell = params[:id]
+        @@user_b.set(@@board, cell)
 
-        
+        show
 
         #TODO figure out currentplayer method, should be a helper but tied to this class since I'm using class variables?
         # current_player = @@user_b
@@ -27,6 +29,12 @@ class BoardController < ApplicationController
 
     def score
         render json: {black: @@board.black_count, white: @@board.white_count}
+    end
+
+    private
+
+    def current_player
+        
     end
 
 end

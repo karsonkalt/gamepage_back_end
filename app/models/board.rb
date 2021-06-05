@@ -1,6 +1,8 @@
 class Board < OthelloRuby::Game::Bord
     include ActiveModel
 
+    @previous_board = nil
+
     def values
         rows = show.split("+---+---+---+---+---+---+---+---+")
         rows.shift
@@ -26,6 +28,10 @@ class Board < OthelloRuby::Game::Bord
             a7: arr[6][0], b7: arr[6][1], c7: arr[6][2], d7: arr[6][3], e7: arr[6][4], f7: arr[6][5], g7: arr[6][6], h7: arr[6][7],
             a8: arr[7][0], b8: arr[7][1], c8: arr[7][2], d8: arr[7][3], e8: arr[7][4], f8: arr[7][5], g8: arr[7][6], h8: arr[7][7]
         }
+    end
+
+    def flipped
+
     end
 
 end
