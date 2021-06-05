@@ -15,9 +15,14 @@ class BoardController < ApplicationController
 
     def play
         cell = params[:id]
-        @@user_b.set(@@board, cell)
 
-        show
+        #TODO: this will run even if the space isn't playable, check how to fix this.
+        if @@board.set(current_user, cell)
+            render json: @@board.cells_to_be_flipped
+        else
+            # This line isn't working
+            render json: "You can't play here?"
+        end
 
         #TODO figure out currentplayer method, should be a helper but tied to this class since I'm using class variables?
         # current_player = @@user_b
@@ -33,8 +38,11 @@ class BoardController < ApplicationController
 
     private
 
-    def current_player
-        
+    def current_user
+        if @@board.current_user == "black"
+            @@user_b
+        else
+            @@user_w
+        end
     end
-
 end
