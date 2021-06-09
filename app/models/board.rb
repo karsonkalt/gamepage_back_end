@@ -1,8 +1,14 @@
 class Board < OthelloRuby::Game::Bord
     include ActiveModel
+
+    @@board_id = 0
+
+    attr_accessor :board_id
     
     def initialize(arg)
         @previous_boards = []
+        # @@board_id += 1
+        # self.board_id = @@board_id.ToString().PadLeft(4, '0')
         super(arg)
     end
 
