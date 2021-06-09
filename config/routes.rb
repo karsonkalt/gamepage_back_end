@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   post 'board/play/:id', to: 'board#play'
   get 'board/score', to: 'board#score'
 
-  resources :sessions
+  post 'sessions', to: 'sessions#create'
+  get 'logout', to: 'sessions#delete'
 end
