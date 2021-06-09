@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
             session[:user] = user
             render json: session[:user]
         else
-            render json: user.errors.full_messages
+            render json: {errors: user.errors.full_messages}
         end
     end
 
