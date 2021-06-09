@@ -1,4 +1,4 @@
-# class User < ApplicationRecord
-#     has_many :scores
+class User < ApplicationRecord
+    has_many :scores
 
-# end
+end

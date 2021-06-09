@@ -1,3 +1,3 @@
-# class Score < ApplicationRecord
-#   belongs_to :user
-# end
+class Score < ApplicationRecord
+  belongs_to :user
+end
