@@ -12,4 +12,9 @@ class ScoreController < ApplicationController
         render json: score
     end
 
+    def index
+        scores = Score.all
+        render json: scores
+    end
+
 end

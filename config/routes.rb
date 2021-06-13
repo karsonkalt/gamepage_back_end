@@ -11,4 +11,8 @@ Rails.application.routes.draw do
 
   post 'score', to: 'score#create'
   get 'score/:id', to: 'score#show'
+
+  get 'users', to: 'user#index'
+
+  #TODO check naming convention here some pluralized some not.
 end
