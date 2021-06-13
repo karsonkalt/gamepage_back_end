@@ -42,3 +42,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "othello_ruby", "~> 0.1.0"
 
 gem "hashdiff", "~> 1.0"
+
+gem "faker", "~> 2.18"
