@@ -1,9 +1,8 @@
 class Board < OthelloRuby::Game::Bord
     include ActiveModel
 
-    @@board_id = 0
-
-    attr_accessor :board_id
+    # @@board_id = 0
+    # attr_accessor :board_id
     
     def initialize(arg)
         @previous_boards = []

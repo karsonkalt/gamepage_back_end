@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   post 'sessions', to: 'sessions#create'
   get 'logout', to: 'sessions#delete'
+
+  post 'score', to: 'score#create'
+  get 'score/:id', to: 'score#show'
 end
