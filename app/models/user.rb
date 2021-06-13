@@ -15,8 +15,10 @@ class User < ApplicationRecord
 
     # Class Methods
 
-    def self.top_users(starting_position, ending_position)
-        top_users = self.includes(:scores).sort_by { |user| -user.average_score}[starting_position..ending_position]
+    def self.top_users(call)
+        starting = (call * 10) - 10
+        ending = (call * 10) - 1
+        top_users = self.includes(:scores).sort_by { |user| -user.average_score}[starting..ending]
         top_users.map {|user| {user: user, average_score: user.average_score}}
     end
 
