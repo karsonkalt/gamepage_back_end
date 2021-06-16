@@ -13,7 +13,7 @@ class ScoresController < ApplicationController
     end
 
     def index
-        scores = Score.all
+        scores = Score.where(user_id: params[:user_id])
         render json: scores
     end
 
