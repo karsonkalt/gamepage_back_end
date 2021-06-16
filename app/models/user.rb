@@ -16,8 +16,8 @@ class User < ApplicationRecord
     # Class Methods
 
     def self.top_users
-        top_users = self.includes(:scores).sort_by { |user| -user.average_score}[0..9]
-        top_users.map {|user| {user: user, average_score: user.average_score}}
+        top_users = self.includes(:scores).sort_by { |user| -user.average_score}[0..4]
+        top_users.map {|user| {user: user, average_score: user.average_score, games_played: user.scores.length}}
     end
 
 end
