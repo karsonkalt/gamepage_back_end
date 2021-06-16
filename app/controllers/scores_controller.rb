@@ -1,4 +1,4 @@
-class ScoreController < ApplicationController
+class ScoresController < ApplicationController
 
     def create
         # TODO change param to the param sent from the front end with the points in it.

@@ -9,10 +9,14 @@ Rails.application.routes.draw do
   post 'sessions', to: 'sessions#create'
   get 'logout', to: 'sessions#delete'
 
-  post 'score', to: 'score#create'
-  get 'score/:id', to: 'score#show'
+  post 'scores', to: 'scores#create'
+  get 'scores/:id', to: 'scores#show'
 
-  get 'users', to: 'user#index'
+  get 'users', to: 'users#index'
+
+  resources :users, only: [:show] do
+    resources :scores, only: [:index]
+  end
 
   #TODO check naming convention here some pluralized some not.
 end
