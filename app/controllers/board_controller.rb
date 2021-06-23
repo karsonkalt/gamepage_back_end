@@ -19,13 +19,6 @@ class BoardController < ApplicationController
         else
             render json: {error: "You can't play here"}
         end
-
-        # if @@board.set(current_user, cell)
-        #     render json: @@board.cells_to_be_flipped
-        # else
-        #     render json: {error: "You can't play here"}
-        # end
-
     end
 
     private
