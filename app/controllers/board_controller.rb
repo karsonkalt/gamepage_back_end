@@ -8,12 +8,6 @@ class BoardController < ApplicationController
         render json: {values: board.values, id: board.id}
     end
 
-    # def show
-    #     #TODO ActiveRecord is firing for some reason?
-    #     # render json: session[:board].values
-    #     render json: @@board.values
-    # end
-
     def play
         board_id = params[:board]["boardId"]
         cell = params[:id]
@@ -32,10 +26,6 @@ class BoardController < ApplicationController
         #     render json: {error: "You can't play here"}
         # end
 
-    end
-
-    def score
-        render json: {black: @@board.black_count, white: @@board.white_count}
     end
 
     private

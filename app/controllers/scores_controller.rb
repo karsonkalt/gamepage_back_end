@@ -5,14 +5,9 @@ class ScoresController < ApplicationController
         render json: score
     end
 
-    def show
-        score = Score.find_by_id(params[:id])
-        render json: score
-    end
-
     def index
         scores = Score.where(user_id: params[:user_id])
-        
+
         seralized_scores = scores.map do |score|
             {points: score.points, created_at: score.created_at.strftime('%b %d, %Y at %l:%M%P')}
         end
