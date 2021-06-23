@@ -14,5 +14,4 @@ Rails.application.routes.draw do
     resources :scores, only: [:index]
   end
 
-  #TODO check naming convention here some pluralized some not.
 end
