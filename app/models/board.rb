@@ -1,12 +1,13 @@
 class Board < OthelloRuby::Game::Bord
-    include ActiveModel
-
-    # @@board_id = 0
-    # attr_accessor :board_id
+    @@all = []
+    @@board_id = 0
+    attr_accessor :id
     
     def initialize(arg)
         @previous_boards = []
-        # @@board_id += 1
+        @@board_id += 1
+        self.id = @@board_id
+        @@all << self
         # self.board_id = @@board_id.ToString().PadLeft(4, '0')
         super(arg)
     end
@@ -78,6 +79,15 @@ class Board < OthelloRuby::Game::Bord
         else
             "white"
         end
+    end
+
+    #Class Methods
+    def self.all
+        @@all
+    end
+
+    def self.find(id)
+        @@all.select {|board| board.id == id}.first
     end
 
 end
