@@ -2,7 +2,6 @@ class ScoresController < ApplicationController
 
     def create
         score = Score.create(user: User.find_by_username(params["username"]), points: params["score"])
-        render json: score
     end
 
     def index
