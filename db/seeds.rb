@@ -19,6 +19,7 @@ puts ""
 # Make Scores
 puts "Making scores"
 puts ""
+
 User.all.each do |user|
     # Make 1/10 users a power user
     if rand(1..10) == 1

@@ -1,24 +1,12 @@
-# README
+# GamePage Backend
+![GitHub repo size](https://img.shields.io/github/repo-size/karsonkalt/gamepage_back_end)
+![GitHub last commit](https://img.shields.io/github/last-commit/karsonkalt/gamepage_back_end)
+![Twitter Follow](https://img.shields.io/twitter/follow/karsonkalt?style=social)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Gif of GamePage being rendered in a browser](https://github.com/karsonkalt/gamepage_front_end/blob/main/README_assets/overview.gif?raw=true)
 
-Things you may want to cover:
+GamePage is split into two repositories, frontend and backend:
+- Frontend: [github.com/karsonkalt/gamepage_front_end](https://github.com/karsonkalt/gamepage_front_end)
+- Backend: [github.com/karsonkalt/gamepage_back_end](https://github.com/karsonkalt/gamepage_back_end)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Please visit the [frontend repository](https://github.com/karsonkalt/gamepage_front_end) for the project README and additional information.
